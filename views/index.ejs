@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=Adu7i4i7__iB2c1GqCVvh5p6ZE8CfUOSkN27IzTkrjImxKecPZA_knb5QkX33A0SV2bSMnfi1RXdqAiP"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <div class="custom-container">
+        <div class="container">
+            <div class="card mx-auto" style="width: 18rem;">
+                <div class="card-header text-center">
+                    <h3>Donate</h3>
+                </div>
+                <div class="card-body text-center">
+                    <% if (paymentStatus == 'success') { %>
+                        <div class="alert alert-success">Payment successful!</div>
+                    <% } else if (paymentStatus == 'error') {%>
+                        <div class="alert alert-danger">Payment unsuccessful!</div>
+                    <% } %>
+
+                    <form>
+                        <div class="form-group">
+                            <input type="amount" class="form-control" id="amount" placeholder="Enter Amount">
+                        </div>
+                        <div id="paypal-button">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
