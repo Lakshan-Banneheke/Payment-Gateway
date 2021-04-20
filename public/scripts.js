@@ -18,10 +18,10 @@ paypal.Buttons({
                     paymentDetails: details
                 },
                 success: function (response) {
-                    if (response.result === 'redirect') {
+                    // if (response.result === 'redirect') {
                         //redirecting
                         window.location.replace(window.location.origin + response.url);
-                    }
+                    // }
                 },
                 error: function (res) {
                 }
@@ -29,6 +29,6 @@ paypal.Buttons({
         });
     },
     onCancel: function (data) {
-        window.location.replace(window.location.origin + '/?payment=error');
+        window.location.replace(window.location.origin + '/payment/?payment=error1');
     }
 }).render('#paypal-button');
